@@ -2801,7 +2801,16 @@ footer {
           <input type="hidden" id="position" name="position" value="">
           <input type="hidden" id="telegram" name="telegram" value="">
           <input type="hidden" id="phone" name="phone" value="">
-          <input type="hidden" id="interest" name="interest" value="free">
+          <div class="form-field full">
+            <label class="form-label" for="interest">Что вас интересует *</label>
+            <select class="form-input" id="interest" name="interest">
+              <option value="free">Бесплатный семинар (1 июля, 10:00 МСК)</option>
+              <option value="designers">Практикум для инженеров-проектировщиков</option>
+              <option value="contractors">Практикум для строителей и генподрядчиков</option>
+              <option value="villa">AI Engineering Villa (Шри-Ланка)</option>
+              <option value="corporate">Корпоративное обучение</option>
+            </select>
+          </div>
           <button type="button" class="btn btn-primary form-submit" id="submit-btn" onclick="submitForm()">
             🚀 Отправить заявку
           </button>
