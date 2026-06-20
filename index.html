@@ -2958,7 +2958,7 @@ async function submitForm() {
     // TODO: Замените https://script.google.com/macros/s/AKfycbzlFC5cIqmgIb5JCCIma3x_cVkUW2PJ7zgSbKGuIU3gbC6FFjpWAtCAMekrFWTQHmSp/exec на URL вашего Apps Script Web App
     const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzlFC5cIqmgIb5JCCIma3x_cVkUW2PJ7zgSbKGuIU3gbC6FFjpWAtCAMekrFWTQHmSp/exec';
 
-    if (APPS_SCRIPT_URL !== 'https://script.google.com/macros/s/AKfycbzlFC5cIqmgIb5JCCIma3x_cVkUW2PJ7zgSbKGuIU3gbC6FFjpWAtCAMekrFWTQHmSp/exec') {
+    if (APPS_SCRIPT_URL) {
       await fetch(APPS_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -3101,7 +3101,7 @@ async function submitHeroForm() {
 
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzlFC5cIqmgIb5JCCIma3x_cVkUW2PJ7zgSbKGuIU3gbC6FFjpWAtCAMekrFWTQHmSp/exec';
   try {
-    if (APPS_SCRIPT_URL !== 'https://script.google.com/macros/s/AKfycbzlFC5cIqmgIb5JCCIma3x_cVkUW2PJ7zgSbKGuIU3gbC6FFjpWAtCAMekrFWTQHmSp/exec') {
+    if (APPS_SCRIPT_URL) {
       await fetch(APPS_SCRIPT_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
     }
   } catch(e) {}
