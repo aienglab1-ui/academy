@@ -2955,10 +2955,10 @@ async function submitForm() {
 
   try {
     // === GOOGLE SHEETS via Apps Script ===
-    // TODO: Замените YOUR_APPS_SCRIPT_WEB_APP_URL на URL вашего Apps Script Web App
-    const APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_WEB_APP_URL';
+    // TODO: Замените https://script.google.com/macros/s/AKfycbzlFC5cIqmgIb5JCCIma3x_cVkUW2PJ7zgSbKGuIU3gbC6FFjpWAtCAMekrFWTQHmSp/exec на URL вашего Apps Script Web App
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzlFC5cIqmgIb5JCCIma3x_cVkUW2PJ7zgSbKGuIU3gbC6FFjpWAtCAMekrFWTQHmSp/exec';
 
-    if (APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_WEB_APP_URL') {
+    if (APPS_SCRIPT_URL !== 'https://script.google.com/macros/s/AKfycbzlFC5cIqmgIb5JCCIma3x_cVkUW2PJ7zgSbKGuIU3gbC6FFjpWAtCAMekrFWTQHmSp/exec') {
       await fetch(APPS_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -3099,9 +3099,9 @@ async function submitHeroForm() {
     source: 'hero-form'
   };
 
-  const APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_WEB_APP_URL';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzlFC5cIqmgIb5JCCIma3x_cVkUW2PJ7zgSbKGuIU3gbC6FFjpWAtCAMekrFWTQHmSp/exec';
   try {
-    if (APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_WEB_APP_URL') {
+    if (APPS_SCRIPT_URL !== 'https://script.google.com/macros/s/AKfycbzlFC5cIqmgIb5JCCIma3x_cVkUW2PJ7zgSbKGuIU3gbC6FFjpWAtCAMekrFWTQHmSp/exec') {
       await fetch(APPS_SCRIPT_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
     }
   } catch(e) {}
