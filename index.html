@@ -1020,6 +1020,49 @@ section { padding: var(--section-pad) 0; }
   color: var(--white-40);
   margin-top: 4px;
 }
+/* Custom Select */
+.custom-select { position: relative; width: 100%; user-select: none; }
+.cs-selected {
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 15px;
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color .2s;
+}
+.cs-selected:hover { border-color: var(--electric); }
+.custom-select.open .cs-selected { border-color: var(--electric); background: rgba(0,180,255,.04); }
+.cs-arrow { color: var(--white-40); font-size: 13px; transition: transform .2s; }
+.custom-select.open .cs-arrow { transform: rotate(180deg); }
+.cs-options {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0; right: 0;
+  background: #1a2540;
+  border: 1px solid var(--electric);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 100;
+  box-shadow: 0 8px 32px rgba(0,0,0,.4);
+}
+.custom-select.open .cs-options { display: block; }
+.cs-option {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--white-70);
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  transition: background .15s, color .15s;
+}
+.cs-option:last-child { border-bottom: none; }
+.cs-option:hover { background: rgba(0,180,255,.12); color: var(--white); }
+.cs-option.active { color: var(--electric); font-weight: 600; background: rgba(0,180,255,.08); }
 /* Success state */
 .form-success {
   display: none;
@@ -2802,14 +2845,21 @@ footer {
           <input type="hidden" id="telegram" name="telegram" value="">
           <input type="hidden" id="phone" name="phone" value="">
           <div class="form-field full">
-            <label class="form-label" for="interest">Что вас интересует *</label>
-            <select class="form-input" id="interest" name="interest">
-              <option value="free">Бесплатный семинар (1 июля, 10:00 МСК)</option>
-              <option value="designers">Практикум для инженеров-проектировщиков</option>
-              <option value="contractors">Практикум для строителей и генподрядчиков</option>
-              <option value="villa">AI Engineering Villa (Шри-Ланка)</option>
-              <option value="corporate">Корпоративное обучение</option>
-            </select>
+            <label class="form-label">Что вас интересует *</label>
+            <input type="hidden" id="interest" name="interest" value="free">
+            <div class="custom-select" id="custom-select">
+              <div class="cs-selected" onclick="toggleSelect()">
+                <span id="cs-label">Бесплатный семинар (1 июля, 10:00 МСК)</span>
+                <span class="cs-arrow">▾</span>
+              </div>
+              <div class="cs-options" id="cs-options">
+                <div class="cs-option" onclick="selectOption('free', 'Бесплатный семинар (1 июля, 10:00 МСК)')">Бесплатный семинар (1 июля, 10:00 МСК)</div>
+                <div class="cs-option" onclick="selectOption('designers', 'Практикум для инженеров-проектировщиков')">Практикум для инженеров-проектировщиков</div>
+                <div class="cs-option" onclick="selectOption('contractors', 'Практикум для строителей и генподрядчиков')">Практикум для строителей и генподрядчиков</div>
+                <div class="cs-option" onclick="selectOption('villa', 'AI Engineering Villa (Шри-Ланка)')">AI Engineering Villa (Шри-Ланка)</div>
+                <div class="cs-option" onclick="selectOption('corporate', 'Корпоративное обучение')">Корпоративное обучение</div>
+              </div>
+            </div>
           </div>
           <button type="button" class="btn btn-primary form-submit" id="submit-btn" onclick="submitForm()">
             🚀 Отправить заявку
@@ -2938,6 +2988,22 @@ document.querySelectorAll('.faq-item').forEach(item => {
 });
 
 // ── FORM SUBMISSION ───────────────────────────────────────
+// ── CUSTOM SELECT ─────────────────────────────────────────
+function toggleSelect() {
+  document.getElementById('custom-select').classList.toggle('open');
+}
+function selectOption(value, label) {
+  document.getElementById('interest').value = value;
+  document.getElementById('cs-label').textContent = label;
+  document.querySelectorAll('.cs-option').forEach(o => o.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('custom-select').classList.remove('open');
+}
+document.addEventListener('click', function(e) {
+  const cs = document.getElementById('custom-select');
+  if (cs && !cs.contains(e.target)) cs.classList.remove('open');
+});
+
 async function submitForm() {
   const btn = document.getElementById('submit-btn');
 
