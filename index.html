@@ -820,18 +820,25 @@ section { padding: var(--section-pad) 0; }
 }
 .about-content .t-label { margin-bottom: 16px; }
 .about-story {
-  font-size: 16px;
-  line-height: 1.85;
+  font-size: 14px;
+  line-height: 1.9;
   color: var(--white-70);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
+  max-width: 540px;
+}
+.about-story p {
+  margin: 0;
 }
 .about-story p.highlight {
   color: var(--white);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.6;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.7;
+  border-left: 2px solid var(--electric);
+  padding-left: 16px;
+  margin-left: -18px;
 }
 
 /* ── FOR WHOM ── */
@@ -2586,8 +2593,8 @@ footer {
         </div>
       </div>
       <div class="about-content reveal reveal-delay-2">
-        <p class="t-label" style="margin-bottom:16px;">Основатель</p>
-        <h2 id="about-heading" class="t-h2" style="margin-bottom:32px;">От инженерных проектов —<br>к инженерии будущего</h2>
+        <p class="t-label" style="margin-bottom:12px;">Основатель</p>
+        <h2 id="about-heading" class="t-h2" style="font-size:clamp(22px,2.4vw,32px); margin-bottom:24px; line-height:1.25;">От инженерных проектов —<br>к инженерии будущего</h2>
         <div class="about-story">
           <p>Я никогда не планировала заниматься искусственным интеллектом.</p>
           <p>Почти тридцать лет я работала в промышленной инженерии и прошла путь, который редко удается пройти одному человеку.</p>
@@ -3207,3 +3214,345 @@ async function submitHeroForm() {
   targets.forEach(t => obs.observe(t));
 })();
 </script></body></html>
+<!-- DESIGN REFRESH INJECTED -->
+<style>
+/* ═══════════════════════════════════════════════
+   DESIGN REFRESH — AI Engineering Lab
+   ═══════════════════════════════════════════════ */
+
+/* ── GLOBAL IMPROVEMENTS ── */
+::selection { background: rgba(0,180,255,.25); color: #fff; }
+
+section { padding: 100px 0; }
+
+/* ── HERO IMPROVEMENTS ── */
+#hero { padding-top: 100px; }
+.hero-h1 {
+  font-size: clamp(30px, 4.5vw, 58px);
+  letter-spacing: -.03em;
+  line-height: 1.08;
+  margin-bottom: 20px;
+}
+.hero-subtitle {
+  font-size: 15px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.7;
+  margin: 20px 0 32px;
+  max-width: 460px;
+}
+.hero-program-list.hero-program-list-short {
+  margin-top: 24px;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hero-program-list.hero-program-list-short li {
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.55;
+  padding: 8px 12px;
+  background: rgba(255,255,255,.03);
+  border-radius: 6px;
+  border-left: 2px solid rgba(0,180,255,.4);
+}
+.hero-program-list.hero-program-list-short li::before { display: none; }
+
+/* ── HERO FORM CARD ── */
+.hero-form-card {
+  background: #1a2236;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 32px 80px rgba(0,0,0,.5);
+}
+.hero-form-card::before {
+  left: 28px; right: 28px;
+}
+.hero-form-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  letter-spacing: -.02em;
+}
+.hero-form-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,.35);
+  margin-bottom: 20px;
+}
+.hero-form-fields .form-input {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+}
+.hero-form-fields .form-input:focus {
+  border-color: #00B4FF;
+  background: rgba(0,180,255,.05);
+}
+.hero-form-note {
+  font-size: 11px;
+  color: rgba(255,255,255,.3);
+  line-height: 1.6;
+  margin-top: 14px;
+  text-align: center;
+}
+
+/* ── SYSTEM THESIS BLOCK ── */
+#system-thesis {
+  background: linear-gradient(135deg, #0a1628 0%, #0e1f3d 100%);
+  border-top: 1px solid rgba(0,180,255,.1);
+  border-bottom: 1px solid rgba(0,180,255,.1);
+  padding: 80px 0;
+}
+.system-thesis-box {
+  border-left: 3px solid #00B4FF;
+  padding-left: 40px;
+  max-width: 760px;
+}
+.system-thesis-box h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  margin-bottom: 28px;
+  letter-spacing: -.025em;
+  line-height: 1.2;
+}
+.system-thesis-box p {
+  font-size: 15px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.system-thesis-box strong {
+  color: rgba(255,255,255,.9);
+  font-weight: 600;
+}
+.system-thesis-box p:last-of-type { margin-bottom: 0; }
+
+/* ── WHY NOW SECTION ── */
+#why-ai { background: #0a0f1e; }
+.why-now-timeline { padding: 48px 0; }
+.wnt-item { align-items: flex-start; }
+.wnt-year { font-size: 13px; font-weight: 700; width: 52px; color: rgba(255,255,255,.4); padding-top: 2px; }
+.wnt-year.accent-text { color: #00B4FF; }
+.wnt-text { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,.6); }
+.wnt-text strong { color: #fff; }
+
+.why-grid {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.06);
+  gap: 1px;
+  background: rgba(255,255,255,.06);
+}
+.why-cell {
+  padding: 36px 32px;
+  background: #0d1526;
+}
+.why-cell:hover { background: #131d30; }
+.why-cell-icon { font-size: 28px; margin-bottom: 14px; }
+.why-cell h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; letter-spacing: -.01em; }
+.why-cell p { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.7; }
+
+.before-after { border-radius: 12px; border: 1px solid rgba(255,255,255,.07); }
+.ba-col { padding: 40px 36px; }
+.ba-col-label { font-size: 10px; letter-spacing: .18em; margin-bottom: 20px; }
+.ba-list li { font-size: 13px; color: rgba(255,255,255,.6); gap: 10px; }
+.ba-col.after .ba-list li { color: rgba(255,255,255,.75); }
+
+/* ── ECOSYSTEM ── */
+#what-we-do { background: #0e1628; }
+.eco-spoke-card {
+  background: #0d1526;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: all .22s ease;
+}
+.eco-spoke-card:hover {
+  border-color: rgba(0,180,255,.2);
+  background: #111e35;
+  transform: translateY(-2px);
+}
+.eco-spoke-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.eco-spoke-card p { font-size: 12px; color: rgba(255,255,255,.5); line-height: 1.6; }
+.eco-status.live {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #00B4FF;
+  background: rgba(0,180,255,.1);
+  border: 1px solid rgba(0,180,255,.2);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+/* ── TASKS GRID ── */
+#tasks { background: #0a0f1e; }
+.tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.task-item {
+  background: #0a0f1e;
+  padding: 28px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: background .2s;
+}
+.task-item:hover { background: #0e1628; }
+.task-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.task-text h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; letter-spacing: -.01em; }
+.task-text p { font-size: 12px; color: rgba(255,255,255,.5); line-height: 1.6; }
+
+/* ── PROGRAMS ── */
+#curriculum { background: #0e1628; }
+.prog-card {
+  background: #0d1526;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 14px;
+}
+.prog-title {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+}
+.prog-module strong { font-size: 13px; }
+.prog-module span { font-size: 12px; }
+
+/* ── VILLA ── */
+#villa { background: #0a0f1e; }
+.villa-feat h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.villa-feat p { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.6; }
+
+/* ── CORPORATE ── */
+#corporate { background: #0e1628; }
+
+/* ── ABOUT SECTION ── */
+#about { background: #0a0f1e; }
+.about-inner { gap: 80px; }
+.about-story {
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(255,255,255,.62);
+  gap: 12px;
+  max-width: 520px;
+}
+.about-story p.highlight {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,.85);
+  border-left: 2px solid #00B4FF;
+  padding: 10px 16px;
+  margin-left: 0;
+  background: rgba(0,180,255,.04);
+  border-radius: 0 6px 6px 0;
+}
+
+/* ── WEBINAR MINI REMINDER ── */
+#webinar { background: #0e1628; padding: 56px 0; }
+.webinar-mini-cta {
+  border-left-width: 3px;
+  border-left-color: #00B4FF;
+  padding: 32px 40px;
+  background: #0d1526;
+}
+
+/* ── WHY US ── */
+#why-us { background: #0a0f1e; }
+.whyus-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 56px;
+}
+.whyus-cell {
+  background: #0a0f1e;
+  padding: 36px 28px;
+  text-align: center;
+}
+.whyus-num {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.whyus-label { font-size: 12px; color: rgba(255,255,255,.45); line-height: 1.5; }
+
+/* ── FAQ ── */
+#faq { background: #0e1628; }
+.faq-item {
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: 20px 0;
+}
+.faq-q { font-size: 15px; font-weight: 600; }
+.faq-a { font-size: 13px; color: rgba(255,255,255,.6); line-height: 1.7; }
+
+/* ── REGISTER FORM ── */
+#register-form { background: #0a0f1e; }
+.form-title { font-size: clamp(24px, 3vw, 36px); font-weight: 800; letter-spacing: -.025em; }
+.form-subtitle { font-size: 15px; color: rgba(255,255,255,.5); }
+.form-input {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 14px;
+}
+.form-input:focus { border-color: #00B4FF; background: rgba(0,180,255,.04); }
+.form-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.55); letter-spacing: .03em; }
+
+/* ── FOOTER ── */
+.footer-root {
+  background: #060b16;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.footer-tagline { font-size: 13px; color: rgba(255,255,255,.35); line-height: 1.6; margin-top: 8px; max-width: 240px; }
+.footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: #00B4FF; }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,.25); }
+
+/* ── SECTION DIVIDERS ── */
+#system-thesis + #why-ai,
+#why-ai + #what-we-do,
+#what-we-do + #tasks { margin-top: 0; }
+
+/* ── MOBILE REFINEMENTS ── */
+@media (max-width: 768px) {
+  .hero-inner { gap: 48px; }
+  .hero-h1 { font-size: clamp(28px, 7vw, 38px); }
+  .why-grid { grid-template-columns: 1fr; }
+  .tasks-grid { grid-template-columns: 1fr; }
+  .whyus-grid { grid-template-columns: repeat(2, 1fr); }
+  .before-after { grid-template-columns: 1fr; }
+  .ba-divider { display: none; }
+  section { padding: 72px 0; }
+  .system-thesis-box { padding-left: 24px; }
+}
+
+@media (max-width: 480px) {
+  .hero-h1 { font-size: 26px; }
+  .container { padding: 0 20px; }
+  .whyus-grid { grid-template-columns: 1fr; }
+}
+</style>
