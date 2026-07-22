@@ -337,6 +337,46 @@ select.form-input{appearance:none;-webkit-appearance:none;background-image:url("
 </div>
 
 <!-- HERO -->
+
+
+
+<!-- UPCOMING SEMINAR -->
+<section id="seminar" style="background:var(--navy);padding:80px 0;border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center;">
+      <div class="reveal">
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,180,255,.08);border:1px solid rgba(0,180,255,.2);padding:5px 14px;border-radius:100px;font-size:12px;font-weight:700;color:var(--electric);letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px;">
+          <span style="width:6px;height:6px;background:var(--electric);border-radius:50%;animation:blink 2s ease infinite;display:inline-block;"></span>
+          <span data-ru="Предстоящий семинар" data-en="Upcoming Webinar">Предстоящий семинар</span>
+        </div>
+        <h2 style="font-size:clamp(22px,2.8vw,34px);font-weight:900;letter-spacing:-.025em;line-height:1.2;margin-bottom:20px;"><span data-ru="Почему AI не работает в инженерных компаниях:" data-en="Why AI Doesn't Work in Engineering Companies:">Почему AI не работает в инженерных компаниях:</span><br><span data-ru="7 ошибок внедрения" data-en="7 Implementation Mistakes">7 ошибок внедрения</span></h2>
+        <p style="font-size:15px;color:var(--w60);line-height:1.75;margin-bottom:8px;"><span data-ru="И как построить инженерную AI-систему. От экспериментов с ChatGPT к реальной трансформации инженерных процессов." data-en="And how to build an engineering AI system. From ChatGPT experiments to real transformation of engineering processes.">И как построить инженерную AI-систему. От экспериментов с ChatGPT к реальной трансформации инженерных процессов.</span></p>
+        <div style="display:flex;gap:24px;margin-top:24px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--w80);">📅 <strong><span data-ru="5 августа 2026" data-en="August 5, 2026">5 августа 2026</span></strong></div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--w80);">🕐 <strong><span data-ru="13:00 МСК" data-en="13:00 Moscow Time">13:00 МСК</span></strong></div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--w80);"><span data-ru="🎥 Онлайн" data-en="🎥 Online">🎥 Онлайн</span></div>
+        </div>
+      </div>
+      <div class="reveal rd1">
+        <div style="background:var(--graphite);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-1px;left:32px;right:32px;height:1px;background:linear-gradient(90deg,transparent,var(--electric),transparent);"></div>
+          <div style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px;"><span data-ru="Зарегистрироваться на семинар" data-en="Register for Webinar">Зарегистрироваться на семинар</span></div>
+          <div style="font-size:12px;color:var(--w40);margin-bottom:20px;"><span data-ru="Ссылка придёт на email после регистрации" data-en="The link will be sent to your email after registration">Ссылка придёт на email после регистрации</span></div>
+          <div id="reg-form" style="display:flex;flex-direction:column;gap:10px;">
+            <input type="text" id="reg-name" placeholder="Ваше имя" style="background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:7px;padding:11px 14px;font-size:14px;color:var(--white);width:100%;outline:none;">
+            <input type="email" id="reg-email" placeholder="Email" style="background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:7px;padding:11px 14px;font-size:14px;color:var(--white);width:100%;outline:none;">
+            <button onclick="submitRegForm()" style="width:100%;padding:13px;background:var(--electric);color:var(--navy);border:none;border-radius:7px;font-size:14px;font-weight:800;cursor:pointer;"><span data-ru="Зарегистрироваться →" data-en="Register →">Зарегистрироваться →</span></button>
+          </div>
+          <div id="reg-success" style="display:none;text-align:center;padding:16px 0;">
+            <div style="font-size:36px;margin-bottom:8px;">🎉</div>
+            <p style="font-size:14px;color:var(--w60);line-height:1.6;"><span data-ru="Готово! Ссылка на семинар" data-en="Done! Webinar link">Готово! Ссылка на семинар</span><br><span data-ru="отправлена на email." data-en="has been sent to your email.">отправлена на email.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-glow"></div>
@@ -788,42 +828,8 @@ select.form-input{appearance:none;-webkit-appearance:none;background-image:url("
   </div>
 </section>
 
-<!-- UPCOMING SEMINAR -->
-<section id="seminar" style="background:var(--navy);padding:80px 0;border-bottom:1px solid var(--border);">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center;">
-      <div class="reveal">
-        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,180,255,.08);border:1px solid rgba(0,180,255,.2);padding:5px 14px;border-radius:100px;font-size:12px;font-weight:700;color:var(--electric);letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px;">
-          <span style="width:6px;height:6px;background:var(--electric);border-radius:50%;animation:blink 2s ease infinite;display:inline-block;"></span>
-          <span data-ru="Предстоящий семинар" data-en="Upcoming Webinar">Предстоящий семинар</span>
-        </div>
-        <h2 style="font-size:clamp(22px,2.8vw,34px);font-weight:900;letter-spacing:-.025em;line-height:1.2;margin-bottom:20px;"><span data-ru="Почему AI не работает в инженерных компаниях:" data-en="Why AI Doesn't Work in Engineering Companies:">Почему AI не работает в инженерных компаниях:</span><br><span data-ru="7 ошибок внедрения" data-en="7 Implementation Mistakes">7 ошибок внедрения</span></h2>
-        <p style="font-size:15px;color:var(--w60);line-height:1.75;margin-bottom:8px;"><span data-ru="И как построить инженерную AI-систему. От экспериментов с ChatGPT к реальной трансформации инженерных процессов." data-en="And how to build an engineering AI system. From ChatGPT experiments to real transformation of engineering processes.">И как построить инженерную AI-систему. От экспериментов с ChatGPT к реальной трансформации инженерных процессов.</span></p>
-        <div style="display:flex;gap:24px;margin-top:24px;flex-wrap:wrap;">
-          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--w80);">📅 <strong><span data-ru="5 августа 2026" data-en="August 5, 2026">5 августа 2026</span></strong></div>
-          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--w80);">🕐 <strong><span data-ru="13:00 МСК" data-en="13:00 Moscow Time">13:00 МСК</span></strong></div>
-          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--w80);"><span data-ru="🎥 Онлайн" data-en="🎥 Online">🎥 Онлайн</span></div>
-        </div>
-      </div>
-      <div class="reveal rd1">
-        <div style="background:var(--graphite);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;overflow:hidden;">
-          <div style="position:absolute;top:-1px;left:32px;right:32px;height:1px;background:linear-gradient(90deg,transparent,var(--electric),transparent);"></div>
-          <div style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px;"><span data-ru="Зарегистрироваться на семинар" data-en="Register for Webinar">Зарегистрироваться на семинар</span></div>
-          <div style="font-size:12px;color:var(--w40);margin-bottom:20px;"><span data-ru="Ссылка придёт на email после регистрации" data-en="The link will be sent to your email after registration">Ссылка придёт на email после регистрации</span></div>
-          <div id="reg-form" style="display:flex;flex-direction:column;gap:10px;">
-            <input type="text" id="reg-name" placeholder="Ваше имя" style="background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:7px;padding:11px 14px;font-size:14px;color:var(--white);width:100%;outline:none;">
-            <input type="email" id="reg-email" placeholder="Email" style="background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:7px;padding:11px 14px;font-size:14px;color:var(--white);width:100%;outline:none;">
-            <button onclick="submitRegForm()" style="width:100%;padding:13px;background:var(--electric);color:var(--navy);border:none;border-radius:7px;font-size:14px;font-weight:800;cursor:pointer;"><span data-ru="Зарегистрироваться →" data-en="Register →">Зарегистрироваться →</span></button>
-          </div>
-          <div id="reg-success" style="display:none;text-align:center;padding:16px 0;">
-            <div style="font-size:36px;margin-bottom:8px;">🎉</div>
-            <p style="font-size:14px;color:var(--w60);line-height:1.6;"><span data-ru="Готово! Ссылка на семинар" data-en="Done! Webinar link">Готово! Ссылка на семинар</span><br><span data-ru="отправлена на email." data-en="has been sent to your email.">отправлена на email.</span></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+
 
 <!-- SEMINARS ARCHIVE -->
 <section id="seminars">
